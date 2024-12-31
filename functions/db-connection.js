@@ -1,5 +1,7 @@
 const mysql = require("mysql");
 const dotenv = require("dotenv");
+const serverless = require("serverless-http");
+const express = require("express");
 
 dotenv.config();
 
@@ -18,6 +20,18 @@ db.connect((err) => {
   } else {
     console.log("Connected to MySQL database!");
   }
+});
+
+const app = express();
+
+app.get("/.netlify/functions/test-db-connection", (req, res) => {
+  db.query("SELECT 1 + 1 AS solution", (err, results) => {
+    if (err) {
+      console.error("Error executing query:", err);
+      return res.status(500).json({ error: "Database query failed" });
+    }
+    res.json({ solution: results[0].solution });
+  });
 });
 
 module.exports.handler = serverless(app);

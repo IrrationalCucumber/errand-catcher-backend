@@ -17,3 +17,6 @@
 
 [functions."other-function"]
   timeout = 26
+
+  [functions."test-db-connection"]
+  timeout = 26
