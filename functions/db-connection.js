@@ -1,4 +1,3 @@
-// filepath: /c:/Users/adrean paul sorono/Desktop/ErrandCatcher-backend/errand-catcher-backend/functions/db-connection.js
 const mysql = require("mysql");
 const dotenv = require("dotenv");
 
@@ -21,16 +20,16 @@ db.connect((err) => {
 
 exports.handler = async (event, context) => {
   return new Promise((resolve, reject) => {
-    db.query("SELECT 1 + 1 AS solution", (err, results) => {
+    db.query("SELECT * FROM users", (err, results) => {
       if (err) {
         reject({
           statusCode: 500,
-          body: JSON.stringify({ error: "Database connection failed" }),
+          body: JSON.stringify({ error: "Database query failed" }),
         });
       } else {
         resolve({
           statusCode: 200,
-          body: JSON.stringify({ solution: results[0].solution }),
+          body: JSON.stringify(results),
         });
       }
     });
