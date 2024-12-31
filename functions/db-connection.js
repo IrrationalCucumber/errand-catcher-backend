@@ -20,7 +20,7 @@ db.connect((err) => {
 
 exports.handler = async (event, context) => {
   return new Promise((resolve, reject) => {
-    db.query("SELECT * FROM users", (err, results) => {
+    db.query("SELECT * FROM useraccount", (err, results) => {
       if (err) {
         reject({
           statusCode: 500,
