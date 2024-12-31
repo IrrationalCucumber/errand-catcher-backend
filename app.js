@@ -49,10 +49,10 @@ app.use("/", ExperienceRoutes);
 //   res.json("hello this is the backend");
 // });
 
-const PORT = 8800;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// const PORT = 8800;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
 
 // Function to update records with expired deadlines
 const updateExpiredRecords = () => {
