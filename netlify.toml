@@ -15,8 +15,5 @@
 [functions."user-routes"]
   timeout = 26
 
-[functions."other-function"]
-  timeout = 26
-
-  [functions."test-db-connection"]
+[functions."test-db-connection"]
   timeout = 26

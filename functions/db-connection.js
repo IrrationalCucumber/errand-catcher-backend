@@ -24,7 +24,7 @@ db.connect((err) => {
 
 const app = express();
 
-app.get("/.netlify/functions/test-db-connection", (req, res) => {
+app.get("/test-db-connection", (req, res) => {
   db.query("SELECT 1 + 1 AS solution", (err, results) => {
     if (err) {
       console.error("Error executing query:", err);
