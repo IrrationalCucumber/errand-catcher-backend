@@ -6,7 +6,5 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
-
-[[functions]]
-  name = "errand-routes"
-  timeout = 26
+[functions]
+  timeout = 50
