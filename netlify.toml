@@ -7,4 +7,13 @@
   status = 200
 
 [functions]
-  timeout = 50
+  node_bundler = "esbuild"
+
+[functions."errand-routes"]
+  timeout = 26
+
+[functions."user-routes"]
+  timeout = 26
+
+[functions."other-function"]
+  timeout = 26
