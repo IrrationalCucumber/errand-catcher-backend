@@ -19,21 +19,3 @@ db.connect((err) => {
     console.log("Connected to MySQL database!");
   }
 });
-
-exports.handler = async (event, context) => {
-  return new Promise((resolve, reject) => {
-    db.query("SELECT * FROM useraccount", (err, results) => {
-      if (err) {
-        reject({
-          statusCode: 500,
-          body: JSON.stringify({ error: "Database query failed" }),
-        });
-      } else {
-        resolve({
-          statusCode: 200,
-          body: JSON.stringify(results),
-        });
-      }
-    });
-  });
-};
